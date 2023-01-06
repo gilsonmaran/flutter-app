@@ -9,6 +9,9 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   var count = 0;
+  final names = ['João', 'Gilson', 'Cristina', 'Eduardo', 'Maria'];
+  final list = <String>[];
+  final controller = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -17,36 +20,14 @@ class _HomePageState extends State<HomePage> {
         title: const Text('Meu App'),
       ),
       body: Center(
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Container(
-              width: 80,
-              height: 80,
-              color: Colors.green,
-            ),
-            Container(
-              width: 80,
-              height: 80,
-              color: Colors.yellow,
-            ),
-            Container(
-              width: 80,
-              height: 80,
-              color: Colors.blue,
-            )
-          ]
-          ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        child: const Icon(Icons.add),
-        onPressed: () {
-          setState(() {
-            count++;
-          });
-        },
-      ),
+        child: Stack(
+        alignment: Alignment.center,
+        children: [
+          Container(width: 100, height: 100, color: Colors.red),
+          Container(width: 80, height: 80, color: Colors.amber),
+          Container(width: 60, height: 60, color: Colors.green),
+        ],
+      ),)
     );
   }
 }
